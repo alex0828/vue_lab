@@ -1,25 +1,86 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/views/Home'
+import { createRouter, createWebHistory } from 'vue-router'
+// import Pratice from './pratice'
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('../views/Home/HomeView'),
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('../views/About/AboutView'),
+  },
+  {
+    path: '/pratice',
+    name: 'Pratice',
+    component: () => import('@/components/praticies/Practice'),
+  },
+  {
+    path: '/pratice/project-1',
+    name: 'ProjectOne',
+    component: () => import('@/components/praticies/ProjectOne'),
+  },
+  {
+    path: '/pratice/counter',
+    name: 'ProjectTwo',
+    component: () => import('@/components/praticies/ProjectTwo'),
+  },
+  {
+    path: '/pratice/search',
+    name: 'ProjectThree',
+    component: () => import('@/components/praticies/ProjectThree'),
+  },
+  {
+    path: '/pratice/filterDemo',
+    name: 'ProjectFour',
+    component: () => import('@/components/praticies/ProjectFour'),
+  },
+  {
+    path: '/pratice/listDemo',
+    name: 'ProjectFive',
+    component: () => import('@/components/praticies/ProjectFive'),
+  },
+  {
+    path: '/pratice/project-6',
+    name: 'ProjectSix',
+    component: () => import('@/components/praticies/ProjectSix'),
+  },
+  {
+    path: '/pratice/modalDemo',
+    name: 'ProjectSeven',
+    component: () => import('@/components/praticies/ProjectSeven'),
+  },
+  {
+    path: '/pratice/project-8',
+    name: 'ProjectEight',
+    component: () => import('@/components/praticies/ProjectEight'),
+  },
+  {
+    path: '/pratice/project-9',
+    name: 'ProjectNine',
+    component: () => import('@/components/praticies/ProjectNine'),
+  },
+  {
+    path: '/pratice/project-10',
+    name: 'ProjectTen',
+    component: () => import('@/components/praticies/ProjectTen'),
+  },
+  {
+    path: '/pratice/project-11',
+    name: 'ProjectEleven',
+    component: () => import('@/components/praticies/ProjectEleven'),
+  },
+  {
+    path: '/pratice/project-12',
+    name: 'ProjectTwelve',
+    component: () => import('@/components/praticies/ProjectTwelve'),
+  },
+]
 
-Vue.use(Router)
-
-export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ '@/views/About')
-    }
-  ]
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
 })
+
+export default router
