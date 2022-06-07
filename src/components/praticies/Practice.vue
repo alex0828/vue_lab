@@ -10,7 +10,7 @@
       <router-link :to="{ name: 'ProjectSeven' }">ModalDemo</router-link>
       <router-link :to="{ name: 'ProjectEight' }">Register</router-link>
       <router-link :to="{ name: 'ProjectNine' }">project-9</router-link>
-      <router-link :to="{ name: 'ProjectTen' }">project-10</router-link>
+      <router-link :to="{ name: 'ProjectTen' }">RefDemo</router-link>
       <router-link :to="{ name: 'ProjectEleven' }">project-11</router-link>
       <router-link :to="{ name: 'ProjectTwelve' }">project-12</router-link>
     </div>
