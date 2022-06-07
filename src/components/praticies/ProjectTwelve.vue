@@ -1,7 +1,7 @@
 <template>
   <div class="ProjectTwelve">
-    <h1>CounterWithState</h1>
     <div class="dg">
+    <h1>CounterWithState</h1>
       <div class="row-1">
         <p>Count : {{ count }}</p>
       </div>
@@ -19,9 +19,45 @@
 
 <script>
 export default {
-  name: 'ProjectTwelve'
+  name: 'ProjectTwelve',
+  computed: {
+    count () {
+      return this.$store.state.projectTwelve.count
+    }
+  },
+  methods: {
+    clickImp (num) {
+      this.$store.commit({
+        type: 'countChangeTwelve',
+        amount: num
+      })
+    }
+  }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.ProjectTwelve {
+  .dg{
+    display: grid;
+    gap: 10px;
+    grid-template-rows: 50px;
+    justify-items: center;
+  }
+  .row-2 {
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    button{
+      background: #057BFF;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      &+button{
+        margin-left: 10px;
+      }
+    }
+  }
+}
 </style>

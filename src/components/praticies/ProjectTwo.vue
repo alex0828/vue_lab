@@ -47,7 +47,17 @@ export default {
   .row-2 {
     display: flex;
     width: 300px;
-    justify-content: space-between;
+    justify-content: center;
+    button{
+      background: #057BFF;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      &+button{
+        margin-left: 10px;
+      }
+    }
   }
 }
 </style>

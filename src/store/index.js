@@ -8,6 +8,9 @@ export default createStore({
       projectFive: ['AAA', 'BBB', 'CCC', 'DDD'],
       projectSeven: {
         lightBoxShow: false
+      },
+      projectTwelve: {
+        count: 0
       }
     }
   },
@@ -16,6 +19,9 @@ export default createStore({
   mutations: {
     countChange (state, payload) {
       state.count += payload.amount
+    },
+    countChangeTwelve (state, payload) {
+      state.projectTwelve.count += payload.amount
     },
     projectSeverButtonControler (state, payload) {
       state.projectSeven.lightBoxShow = payload.isOpen
