@@ -3,8 +3,17 @@
     <h1>RefDemo</h1>
     <fieldset>
       <div class="dg">
-        <input type="text" class="one" ref="getFocus"/>
-        <button class="two" @click="setFocus">Set Focus</button>
+        <input
+          ref="getFocus"
+          type="text"
+          class="one"
+        >
+        <button
+          class="two"
+          @click="setFocus"
+        >
+          Set Focus
+        </button>
       </div>
     </fieldset>
   </div>
@@ -12,13 +21,13 @@
 
 <script>
 export default {
-  name: "ProjectTen",
-  methods:{
-    setFocus(){
+  name: 'ProjectTen',
+  methods: {
+    setFocus () {
       this.$refs.getFocus.focus()
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .dg {

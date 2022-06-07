@@ -1,29 +1,38 @@
 <template>
-<div>
+  <div>
     <ul class="List">
-        <li v-for="(item,index) of List" :key="item" @click="print(item,index)">{{item}}</li>
+      <li
+        v-for="(item,index) of List"
+        :key="item"
+        @click="print(item,index)"
+      >
+        {{ item }}
+      </li>
     </ul>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
   props: {
     data: {
-      type: [String, Array],
-    },
+      type: [
+        String,
+        Array
+      ]
+    }
   },
-  computed:{
-      List(){
-          return this.data
-      }
+  computed: {
+    List () {
+      return this.data
+    }
   },
-  methods:{
-      print(el,index){
-          alert(`{"index":${index},"value":${el}}`)
-      }
+  methods: {
+    print (el, index) {
+      alert(`{"index":${index},"value":${el}}`)
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -4,78 +4,78 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/Home/HomeView'),
+    component: () => import('../views/Home/HomeView')
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import('../views/About/AboutView'),
+    component: () => import('../views/About/AboutView')
   },
   {
     path: '/pratice',
-    name: 'Pratice',
-    component: () => import('@/components/praticies/Practice'),
+    name: 'MyPratice',
+    component: () => import('@/components/praticies/MyPractice')
   },
   {
     path: '/pratice/project-1',
     name: 'ProjectOne',
-    component: () => import('@/components/praticies/ProjectOne'),
+    component: () => import('@/components/praticies/ProjectOne')
   },
   {
     path: '/pratice/counter',
     name: 'ProjectTwo',
-    component: () => import('@/components/praticies/ProjectTwo'),
+    component: () => import('@/components/praticies/ProjectTwo')
   },
   {
     path: '/pratice/search',
     name: 'ProjectThree',
-    component: () => import('@/components/praticies/ProjectThree'),
+    component: () => import('@/components/praticies/ProjectThree')
   },
   {
     path: '/pratice/filterDemo',
     name: 'ProjectFour',
-    component: () => import('@/components/praticies/ProjectFour'),
+    component: () => import('@/components/praticies/ProjectFour')
   },
   {
     path: '/pratice/listDemo',
     name: 'ProjectFive',
-    component: () => import('@/components/praticies/ProjectFive'),
+    component: () => import('@/components/praticies/ProjectFive')
   },
   {
     path: '/pratice/project-6',
     name: 'ProjectSix',
-    component: () => import('@/components/praticies/ProjectSix'),
+    component: () => import('@/components/praticies/ProjectSix')
   },
   {
     path: '/pratice/modalDemo',
     name: 'ProjectSeven',
-    component: () => import('@/components/praticies/ProjectSeven'),
+    component: () => import('@/components/praticies/ProjectSeven')
   },
   {
     path: '/pratice/project-8',
     name: 'ProjectEight',
-    component: () => import('@/components/praticies/ProjectEight'),
+    component: () => import('@/components/praticies/ProjectEight')
   },
   {
     path: '/pratice/project-9',
     name: 'ProjectNine',
-    component: () => import('@/components/praticies/ProjectNine'),
+    component: () => import('@/components/praticies/ProjectNine')
   },
   {
     path: '/pratice/project-10',
     name: 'ProjectTen',
-    component: () => import('@/components/praticies/ProjectTen'),
+    component: () => import('@/components/praticies/ProjectTen')
   },
   {
     path: '/pratice/project-11',
     name: 'ProjectEleven',
-    component: () => import('@/components/praticies/ProjectEleven'),
+    component: () => import('@/components/praticies/ProjectEleven')
   },
   {
     path: '/pratice/project-12',
     name: 'ProjectTwelve',
-    component: () => import('@/components/praticies/ProjectTwelve'),
-  },
+    component: () => import('@/components/praticies/ProjectTwelve')
+  }
 ]
 
 const router = createRouter({

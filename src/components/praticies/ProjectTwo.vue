@@ -6,8 +6,12 @@
         <p>Count : {{ count }}</p>
       </div>
       <div class="row-2">
-        <button @click="clickImp(-1)">減 1</button>
-        <button @click="clickImp(1)">加 1</button>
+        <button @click="clickImp(-1)">
+          減 1
+        </button>
+        <button @click="clickImp(1)">
+          加 1
+        </button>
       </div>
     </div>
   </div>
@@ -15,22 +19,24 @@
 
 <script>
 export default {
-  name: "ProjectTwo",
-  methods: {
-    clickImp(num) {
-      console.log(num);
-      this.$store.commit({ type: "countChange", amount: num });
-    },
-  },
+  name: 'ProjectTwo',
   computed: {
-    count() {
-      return this.$store.state.count;
-    },
+    count () {
+      return this.$store.state.count
+    }
   },
-  created() {
-    this.$store.state.count = 0;
+  created () {
+    this.$store.state.count = 0
   },
-};
+  methods: {
+    clickImp (num) {
+      this.$store.commit({
+        type: 'countChange',
+        amount: num
+      })
+    }
+  }
+}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

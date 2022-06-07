@@ -1,13 +1,13 @@
 <template>
   <div>
-      <router-view />
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: "index",
-};
+  name: 'MyIndex'
+}
 </script>
 
 <style lang="scss" scoped>

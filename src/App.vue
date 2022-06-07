@@ -1,22 +1,28 @@
 <template>
-  <Menu :Menu="Menu"/>
-  <routerViewContent />
+<div>
+  <ProjectMenu :menu="menuList" />
+  <RouterViewContent />
+</div>
 </template>
 
 <script>
-import routerViewContent from "./views/index.vue";
-import Menu from "@/components/praticies/Menu.vue";
+import RouterViewContent from './views/MyIndex'
+import ProjectMenu from '@/components/praticies/ProjectMenu'
 export default {
   components: {
-    routerViewContent,
-    Menu,
+    RouterViewContent,
+    ProjectMenu
   },
-  data(){
-    return{
-      Menu:['Home','About','Pratice']
+  data () {
+    return {
+      menuList: [
+        'Home',
+        'About',
+        'MyPratice'
+      ]
     }
   }
-};
+}
 </script>
 <style lang="scss">
 #app {

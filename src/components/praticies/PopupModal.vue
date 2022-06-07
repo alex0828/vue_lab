@@ -2,18 +2,23 @@
   <div>
     <ul class="Modal">
       <li>
-        <button @click="lightBoxOpen">Open PopupModal</button>
+        <button @click="lightBoxOpen">
+          Open PopupModal
+        </button>
       </li>
     </ul>
     <!-- 定錨到主畫面 -->
-    <teleport to="#app" v-if="isOpenState">
+    <teleport
+      v-if="isOpenState"
+      to="#app"
+    >
       <div class="black">
         <div class="container">
           <h4>Demo Modal</h4>
-          <hr />
+          <hr>
           <!-- 父層級傳入 slot -->
           <div class="inner">
-            <slot></slot>
+            <slot />
           </div>
         </div>
       </div>
@@ -23,22 +28,25 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      title: "title"
-    };
-  },
-  methods: {
-    lightBoxOpen() {
-      this.$store.commit("projectSeverButtonControler", { isOpen: true });
+      title: 'title'
     }
   },
   computed: {
-    isOpenState() {
-      return this.$store.state.projectSeven.lightBoxShow;
+    isOpenState () {
+      return this.$store.state.projectSeven.lightBoxShow
+    }
+  },
+  methods: {
+    lightBoxOpen () {
+      this.$store.commit(
+        'projectSeverButtonControler',
+        { isOpen: true }
+      )
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

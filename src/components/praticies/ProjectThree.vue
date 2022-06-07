@@ -4,30 +4,42 @@
       <h1>Search</h1>
       <ul class="filterData">
         <li>
-          <input type="text" v-model="filter" placeholder="搜尋文字 ..." />
+          <input
+            v-model="filter"
+            type="text"
+            placeholder="搜尋文字 ..."
+          >
         </li>
         <li>目前有 {{ ori.length }} 筆資料</li>
-        <li v-for="item of ori" :key="item">{{ item }}</li>
+        <li
+          v-for="item of ori"
+          :key="item"
+        >
+          {{ item }}
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
-import { filterArraySearch } from "@/utils/filterSearch";
+import { filterArraySearch } from '@/utils/filterSearch'
 export default {
-  name: "ProjectThree",
-  data() {
+  name: 'ProjectThree',
+  data () {
     return {
-      filter: "",
-    };
+      filter: ''
+    }
   },
   computed: {
-    ori() {
-      return filterArraySearch(this.filter, this.$store.state.projectThree);
-    },
-  },
-};
+    ori () {
+      return filterArraySearch(
+        this.filter,
+        this.$store.state.projectThree
+      )
+    }
+  }
+}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

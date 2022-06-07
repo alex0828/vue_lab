@@ -6,19 +6,19 @@
 </template>
 
 <script>
-import List from "@/components/praticies/List.vue"
+import List from '@/components/praticies/ProjectList.vue'
 export default {
-  name: "ProjectFive",
-  data(){
-    return{
-      propsIn:this.$store.state.projectFive,
-      default:[]
-    }
-  },
-  components:{
+  name: 'ProjectFive',
+  components: {
     List
+  },
+  data () {
+    return {
+      propsIn: this.$store.state.projectFive,
+      default: []
+    }
   }
-};
+}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

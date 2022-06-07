@@ -3,7 +3,12 @@
     <h1>Filter Demo</h1>
     <ul class="filterData">
       <li>
-        <input type="number" v-model.number="number" placeholder="請輸入數字 ..." max="16"/>
+        <input
+          v-model.number="number"
+          type="number"
+          placeholder="請輸入數字 ..."
+          max="16"
+        >
       </li>
       <li>轉換後的結果 => {{ filterNum }}</li>
     </ul>
@@ -11,20 +16,20 @@
 </template>
 
 <script>
-import { filter } from "@/utils/filter";
+import { filter } from '@/utils/filter'
 export default {
-  name: "ProjectFour",
-  data() {
+  name: 'ProjectFour',
+  data () {
     return {
-      number: "",
-    };
+      number: ''
+    }
   },
   computed: {
-    filterNum() {
-      return filter(this.number);
-    },
-  },
-};
+    filterNum () {
+      return filter(this.number)
+    }
+  }
+}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

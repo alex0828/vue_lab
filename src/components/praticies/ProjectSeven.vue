@@ -4,25 +4,33 @@
     <PopupModal>
       <!-- 主要內容區塊注入 -->
       <p>Woohoo,you're reading this text in a modal!</p>
-      <button class="button" @click="lightBoxClose">Close PopupModal</button>
+      <button
+        class="button"
+        @click="lightBoxClose"
+      >
+        Close PopupModal
+      </button>
       <!--  -->
     </PopupModal>
   </div>
 </template>
 
 <script>
-import PopupModal from "@/components/praticies/PopupModal.vue";
+import PopupModal from '@/components/praticies/PopupModal.vue'
 export default {
-  name: "ProjectSeven",
+  name: 'ProjectSeven',
   components: {
     PopupModal
   },
   methods: {
-    lightBoxClose() {
-      this.$store.commit("projectSeverButtonControler", { isOpen: false });
+    lightBoxClose () {
+      this.$store.commit(
+        'projectSeverButtonControler',
+        { isOpen: false }
+      )
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 h1 {
