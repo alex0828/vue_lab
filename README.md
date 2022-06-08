@@ -2,6 +2,8 @@
 ## 昨日進度 ##
 1. 項目十、項目十二 完成
 2. 已連線 firebase
+3. eslint 配置
+
 ## 預期今日進度 ##
 1. 建立 firebase store 資料庫
 2. 串接 firebase api

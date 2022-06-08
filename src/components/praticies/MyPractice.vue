@@ -24,7 +24,7 @@
         Register
       </router-link>
       <router-link :to="{ name: 'ProjectNine' }">
-        project-9
+        AjaxDemo
       </router-link>
       <router-link :to="{ name: 'ProjectTen' }">
         RefDemo

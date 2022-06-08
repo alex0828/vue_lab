@@ -1,12 +1,17 @@
 <template>
   <div class="ProjectNine">
-    <h1>ProjectNine</h1>
+    <h1>AjaxDemo</h1>
+    <getCartList/>
   </div>
 </template>
 
 <script>
+import getCartList from '@/components/Cart/getCartList.vue'
 export default {
-  name: 'ProjectNine'
+  name: 'ProjectNine',
+  components: {
+    getCartList
+  }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

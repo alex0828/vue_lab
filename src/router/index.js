@@ -52,12 +52,12 @@ const routes = [
     component: () => import('@/components/praticies/ProjectSeven')
   },
   {
-    path: '/pratice/project-8',
+    path: '/pratice/register',
     name: 'ProjectEight',
     component: () => import('@/components/praticies/ProjectEight')
   },
   {
-    path: '/pratice/project-9',
+    path: '/pratice/ajaxDemo',
     name: 'ProjectNine',
     component: () => import('@/components/praticies/ProjectNine')
   },
