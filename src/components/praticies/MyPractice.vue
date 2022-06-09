@@ -30,7 +30,7 @@
         RefDemo
       </router-link>
       <router-link :to="{ name: 'ProjectEleven' }">
-        project-11
+        CarouselDemo
       </router-link>
       <router-link :to="{ name: 'ProjectTwelve' }">
         CounterWithState

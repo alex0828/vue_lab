@@ -62,17 +62,17 @@ const routes = [
     component: () => import('@/components/praticies/ProjectNine')
   },
   {
-    path: '/pratice/project-10',
+    path: '/pratice/refDemo',
     name: 'ProjectTen',
     component: () => import('@/components/praticies/ProjectTen')
   },
   {
-    path: '/pratice/project-11',
+    path: '/pratice/carouselDemo',
     name: 'ProjectEleven',
     component: () => import('@/components/praticies/ProjectEleven')
   },
   {
-    path: '/pratice/project-12',
+    path: '/pratice/counterWithState',
     name: 'ProjectTwelve',
     component: () => import('@/components/praticies/ProjectTwelve')
   }
