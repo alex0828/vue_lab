@@ -6,11 +6,14 @@ export default createStore({
       count: 0,
       projectThree: ['Ada', 'Aaliyah', 'Adela', 'Basia', 'Bonnie', 'Brook', 'Candice', 'Celeste', 'Cheryl', 'Ella', 'Eudora', 'Gemma'],
       projectFive: ['AAA', 'BBB', 'CCC', 'DDD'],
-      projectSeven: {
+      projectLight: {
         lightBoxShow: false
       },
       projectTwelve: {
         count: 0
+      },
+      projectNine: {
+        dataDetail: []
       }
     }
   },
@@ -23,8 +26,8 @@ export default createStore({
     countChangeTwelve (state, payload) {
       state.projectTwelve.count += payload.amount
     },
-    projectSeverButtonControler (state, payload) {
-      state.projectSeven.lightBoxShow = payload.isOpen
+    projectLightButtonControler (state, payload) {
+      state.projectLight.lightBoxShow = payload.isOpen
     }
   },
   actions: {

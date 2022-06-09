@@ -54,7 +54,7 @@ h4{
   display: grid;
   width: 60%;
   margin: 20px auto;
-  grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
   a{
     padding: 15px;
     text-decoration: none;

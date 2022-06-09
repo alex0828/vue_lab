@@ -1,12 +1,5 @@
 <template>
   <div>
-    <ul class="Modal">
-      <li>
-        <button @click="lightBoxOpen">
-          Open PopupModal
-        </button>
-      </li>
-    </ul>
     <!-- 定錨到主畫面 -->
     <teleport
       v-if="isOpenState"
@@ -35,38 +28,16 @@ export default {
   },
   computed: {
     isOpenState () {
-      return this.$store.state.projectSeven.lightBoxShow
+      return this.$store.state.projectLight.lightBoxShow
     }
   },
   methods: {
-    lightBoxOpen () {
-      this.$store.commit(
-        'projectSeverButtonControler',
-        { isOpen: true }
-      )
-    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.Modal {
-  background: #eee;
-  padding: 0;
-  li {
-    padding: 16px;
-    list-style: none;
-    text-align: center;
-  }
-  button {
-    cursor: pointer;
-    background: #057bff;
-    border: none;
-    color: #fff;
-    border-radius: 4px;
-    padding: 12px;
-  }
-}
+
 h4 {
   text-align: center;
 }
@@ -88,8 +59,9 @@ h4 {
     padding: 8px;
     border-radius: 8px;
     .inner {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      gap: 10px;
+      grid-template-rows: auto;
       justify-content: center;
     }
   }

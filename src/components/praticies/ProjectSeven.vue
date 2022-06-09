@@ -1,6 +1,13 @@
 <template>
   <div class="ProjectSeven">
     <h1>Modal Demo</h1>
+    <ul class="Modal">
+      <li>
+        <button @click="lightBoxOpen">
+          Open PopupModal
+        </button>
+      </li>
+    </ul>
     <PopupModal>
       <!-- 主要內容區塊注入 -->
       <p>Woohoo,you're reading this text in a modal!</p>
@@ -10,7 +17,6 @@
       >
         Close PopupModal
       </button>
-      <!--  -->
     </PopupModal>
   </div>
 </template>
@@ -23,9 +29,15 @@ export default {
     PopupModal
   },
   methods: {
+    lightBoxOpen () {
+      this.$store.commit(
+        'projectLightButtonControler',
+        { isOpen: true }
+      )
+    },
     lightBoxClose () {
       this.$store.commit(
-        'projectSeverButtonControler',
+        'projectLightButtonControler',
         { isOpen: false }
       )
     }
@@ -35,6 +47,23 @@ export default {
 <style lang="scss" scoped>
 h1 {
   text-align: center;
+}
+.Modal {
+  background: #eee;
+  padding: 0;
+  li {
+    padding: 16px;
+    list-style: none;
+    text-align: center;
+  }
+  button {
+    cursor: pointer;
+    background: #057bff;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    padding: 12px;
+  }
 }
 // componet 內吃不到父層的 css
 .button {
