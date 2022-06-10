@@ -29,7 +29,7 @@ export default {
         vm.Carousel = res.docs.map(doc => {
           return { ...doc.data() }
         })
-        setTimeout(() => {
+        this.$nextTick(()=>{
           $('.owl-carousel').owlCarousel({
             items: 3,
             loop: true,
@@ -38,7 +38,8 @@ export default {
             autoplayTimeout: 1000,
             autoplayHoverPause: true
           })
-        }, 0);
+          }
+        )
       } catch (error) {
         vm.Carousel = { message: error }
       }

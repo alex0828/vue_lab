@@ -89,6 +89,8 @@ export default {
           vm.isSuccessCart = false
           throw new Error('資料為空')
         }
+        console.log(res)
+        console.log(res.docs)
         vm.Cart = res.docs.map(doc => {
           return { isSuccess: true, data: { ...doc.data(), prodId: doc.id } }
         })
