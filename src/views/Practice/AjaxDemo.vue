@@ -86,7 +86,6 @@ export default {
       data.success && this.$store.commit('saveAxiosData', data)
       // const data = await this.$store.dispatch('getAssetsListHandler')
       //   this.$store.commit('APP_LOADING', false)
-      console.log(data)
     },
 
     async getItemDetail (id) {
@@ -94,8 +93,6 @@ export default {
       // data.success && this.$store.commit('saveAxiosData', data)
       const dataDetail = data.data.filter(item => item.prodId === id)
       data.success && this.$store.commit('getAxiosDataDetail', dataDetail[0])
-
-      console.log(dataDetail[0])
     }
   }
 }

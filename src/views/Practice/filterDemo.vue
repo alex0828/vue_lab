@@ -21,15 +21,11 @@ export default {
       inputVal: ''
     }
   },
-  mounted () {
-    console.log(this.$store.state.itemList)
-  },
   computed: {
     filterNumber () {
       if (this.inputVal === '') {
         return ''
       } else {
-        console.log(this.inputVal)
         return this.inputVal.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
       }
     }

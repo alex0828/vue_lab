@@ -30,7 +30,6 @@ export default {
       if (this.inputVal === '') {
         return ''
       } else {
-        console.log(this.inputVal)
         return this.inputVal.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
       }
     }

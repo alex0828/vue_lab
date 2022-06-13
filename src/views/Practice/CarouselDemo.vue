@@ -50,7 +50,6 @@ export default {
         autoplayHoverPause: true
       })
       })
-      console.log(this.imgList)
     },
   }
 }

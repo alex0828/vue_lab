@@ -26,9 +26,6 @@ export default {
       searchVal: ''
     }
   },
-  mounted () {
-    console.log(this.$store.state.itemList)
-  },
   computed: {
     findItem () {
       return this.$store.state.itemList.filter((item) =>

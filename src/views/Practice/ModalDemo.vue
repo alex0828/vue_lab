@@ -66,7 +66,7 @@ export default {
     left:50%;
     margin-left:-290px;
     margin-bottom:-120px;
-    transform: 1s;
+    transition: 2s;
 }
 .background-black{
     width:100%;
