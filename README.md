@@ -1,4 +1,4 @@
-# aaa
+# Vue Lab
 
 ## Project setup
 ```
