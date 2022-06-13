@@ -1,38 +1,17 @@
 <template>
 <div>
-  <ProjectMenu :menu="menuList" />
-  <RouterViewContent />
+    <myMenu/>
+  <router-view/>
 </div>
 </template>
-
 <script>
-import RouterViewContent from './views/MyIndex'
-import ProjectMenu from '@/components/praticies/ProjectMenu'
+// @ is an alias to /src
+import myMenu from '@/components/menu.vue'
+
 export default {
+  name: 'HomeView',
   components: {
-    RouterViewContent,
-    ProjectMenu
-  },
-  data () {
-    return {
-      menuList: [
-        'Home',
-        'About',
-        'MyPratice'
-      ]
-    }
+    myMenu
   }
 }
 </script>
-<style lang="scss">
-#app {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-</style>

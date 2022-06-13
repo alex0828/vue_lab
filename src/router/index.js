@@ -1,81 +1,100 @@
+/* eslint-disable */
 import { createRouter, createWebHistory } from 'vue-router'
-// import Pratice from './pratice'
+import HomeView from '../views/HomeView.vue'
+
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import('../views/Home/HomeView')
+    name: 'home',
+    component: HomeView
   },
   {
     path: '/about',
-    name: 'About',
-    component: () => import('../views/About/AboutView')
+    name: 'about',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    }
   },
   {
-    path: '/pratice',
-    name: 'MyPratice',
-    component: () => import('@/components/praticies/MyPractice')
+    path: '/practice',
+    name: 'practice',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/PracticeMain.vue')
+      }
   },
   {
-    path: '/pratice/project-1',
-    name: 'ProjectOne',
-    component: () => import('@/components/praticies/ProjectOne')
+    path: '/counter',
+    name: 'counter',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/counterPage.vue')
+      }
   },
   {
-    path: '/pratice/counter',
-    name: 'ProjectTwo',
-    component: () => import('@/components/praticies/ProjectTwo')
+    path: '/search',
+    name: 'search',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/search.vue')
+      }
   },
   {
-    path: '/pratice/search',
-    name: 'ProjectThree',
-    component: () => import('@/components/praticies/ProjectThree')
+    path: '/filterDemo',
+    name: 'filterDemo',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/filterDemo.vue')
+      }
   },
   {
-    path: '/pratice/filterDemo',
-    name: 'ProjectFour',
-    component: () => import('@/components/praticies/ProjectFour')
+    path: '/listDemo',
+    name: 'listDemo',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/ListDemo.vue')
+      }
   },
   {
-    path: '/pratice/listDemo',
-    name: 'ProjectFive',
-    component: () => import('@/components/praticies/ProjectFive')
+    path: '/modalDemo',
+    name: 'modalDemo',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/ModalDemo.vue')
+      }
   },
   {
-    path: '/pratice/project-6',
-    name: 'ProjectSix',
-    component: () => import('@/components/praticies/ProjectSix')
+    path: '/register',
+    name: 'register',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/RegisterPage.vue')
+      }
   },
   {
-    path: '/pratice/modalDemo',
-    name: 'ProjectSeven',
-    component: () => import('@/components/praticies/ProjectSeven')
+    path: '/ajaxDemo',
+    name: 'ajaxDemo',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/AjaxDemo.vue')
+      }
   },
   {
-    path: '/pratice/register',
-    name: 'ProjectEight',
-    component: () => import('@/components/praticies/ProjectEight')
+    path: '/refDemo',
+    name: 'refDemo',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/RefDemo.vue')
+      }
   },
   {
-    path: '/pratice/ajaxDemo',
-    name: 'ProjectNine',
-    component: () => import('@/components/praticies/ProjectNine')
+    path: '/carouselDemo',
+    name: 'carouselDemo',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/CarouselDemo.vue')
+      }
   },
   {
-    path: '/pratice/refDemo',
-    name: 'ProjectTen',
-    component: () => import('@/components/praticies/ProjectTen')
+    path: '/counterWithState',
+    name: 'counterWithState',
+    component: function () {
+        return import(/* webpackChunkName: "about" */ '../views/Practice/CounterWithState.vue')
+      }
   },
-  {
-    path: '/pratice/carouselDemo',
-    name: 'ProjectEleven',
-    component: () => import('@/components/praticies/ProjectEleven')
-  },
-  {
-    path: '/pratice/counterWithState',
-    name: 'ProjectTwelve',
-    component: () => import('@/components/praticies/ProjectTwelve')
-  }
 ]
 
 const router = createRouter({
