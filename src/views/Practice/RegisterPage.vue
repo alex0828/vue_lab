@@ -21,7 +21,7 @@
             </div>
             <div class="flex">
                 <div class="fiftyWidth"><span class="right">手機</span></div>
-                <Field name="phone" type="number" :rules="mobile" v-model="inputPhone"/>
+                <Field name="phone" type="number" v-model="inputPhone"/>
                 <ErrorMessage name="phone" class="error"/>
             </div>
             <button>Submit</button>
@@ -54,21 +54,6 @@ export default {
     }
   },
   methods: {
-    identity (value) {
-      if (!value) return '此欄位為必填欄位。'
-      if (!/^[a-zA-Z]\d{9}$/.test(value)) return '輸入格式錯誤，請重新輸入。'
-      return true
-    },
-    name (value) {
-      if (!value) return '此欄位為必填欄位。'
-      if (value.length > 30) return '輸入格式錯誤，請重新輸入。'
-      return true
-    },
-    mobile (value) {
-      if (!value) return '此欄位為必填欄位。'
-      if (!/^(09+\d{8})$/.test(value)) return '輸入格式錯誤，請重新輸入。'
-      return true
-    },
     onSubmit (values) {
       // Submit values to API...
       alert('身份證:' + this.inputIdentity + ', 姓名:' + this.inputName + ', 性別:' + this.inputGender + ', 手機:' + this.inputPhone)
