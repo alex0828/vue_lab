@@ -29,21 +29,21 @@ const routes = [
     path: '/counter',
     name: 'counter',
     component: function () {
-        return import(/* webpackChunkName: "about" */ '../views/Practice/counterPage.vue')
+        return import(/* webpackChunkName: "about" */ '../views/Practice/CounterPage.vue')
       }
   },
   {
     path: '/search',
     name: 'search',
     component: function () {
-        return import(/* webpackChunkName: "about" */ '../views/Practice/search.vue')
+        return import(/* webpackChunkName: "about" */ '../views/Practice/Search.vue')
       }
   },
   {
     path: '/filterDemo',
     name: 'filterDemo',
     component: function () {
-        return import(/* webpackChunkName: "about" */ '../views/Practice/filterDemo.vue')
+        return import(/* webpackChunkName: "about" */ '../views/Practice/FilterDemo.vue')
       }
   },
   {
