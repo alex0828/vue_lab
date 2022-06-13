@@ -71,7 +71,7 @@ export default {
     },
     onSubmit (values) {
       // Submit values to API...
-      alert('身份證:' + this.inputIdentity + '姓名:' + this.inputName + '性別:' + this.inputGender + '手機:' + this.inputPhone)
+      alert('身份證:' + this.inputIdentity + ', 姓名:' + this.inputName + ', 性別:' + this.inputGender + ', 手機:' + this.inputPhone)
     }
   }
 }
