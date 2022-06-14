@@ -24,8 +24,9 @@
                 <Field name="phone" type="number" v-model="inputPhone"/>
                 <ErrorMessage name="phone" class="error"/>
             </div>
-            <button>Submit</button>
+            <button class="btn">Submit</button>
           </Form>
+          <button class="btn"  @click="clear">Clear</button>
       </div>
 </div>
 </template>
@@ -57,6 +58,12 @@ export default {
     onSubmit (values) {
       // Submit values to API...
       alert('身份證:' + this.inputIdentity + ', 姓名:' + this.inputName + ', 性別:' + this.inputGender + ', 手機:' + this.inputPhone)
+    },
+    clear () {
+      this.inputIdentity = ''
+      this.inputName = ''
+      this.inputGender = ''
+      this.inputPhone = ''
     }
   }
 }
@@ -99,5 +106,6 @@ export default {
 .btn {
   width: 100px;
   height: 24px;
+  margin:4px 0;
 }
 </style>
