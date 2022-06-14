@@ -13,18 +13,18 @@
   </div>
 </template>
 <script>
-/* eslint-disable */ 
+
 import axios from 'axios'
 export default {
   name: 'CarouselDemo',
-  data(){
-      return {
-          imgList:[]
-      }
+  data () {
+    return {
+      imgList: []
+    }
   },
   created () {
-      this.getAssetsList()
-        // this.move()
+    this.getAssetsList()
+    // this.move()
   },
   methods: {
     move () {
@@ -41,16 +41,16 @@ export default {
       const { data } = await axios.get('/product/list')
       this.imgList = data.data
       this.$nextTick(() => {
-          $('.carousel').owlCarousel({
-        items: 3,
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 1000,
-        autoplayHoverPause: true
+        $('.carousel').owlCarousel({
+          items: 3,
+          loop: true,
+          margin: 10,
+          autoplay: true,
+          autoplayTimeout: 1000,
+          autoplayHoverPause: true
+        })
       })
-      })
-    },
+    }
   }
 }
 </script>
