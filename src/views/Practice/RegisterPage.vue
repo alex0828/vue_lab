@@ -5,24 +5,34 @@
           <Form @submit="onSubmit" :validation-schema="schema">
             <div class="flex">
                 <div class="fiftyWidth"><span class="right">身份證字號</span></div>
-                <Field name="identity" type="email" rules="required" v-model="inputIdentity"/>
-                <ErrorMessage name="identity" class="error"/>
+                <div style="position:relative;">
+                    <Field name="identity" type="email" rules="required" class="input-left" v-model="inputIdentity"/>
+                    <ErrorMessage name="identity" class="error"/>
+                </div>
             </div>
             <div class="flex">
                 <div class="fiftyWidth"><span class="right">姓名</span></div>
-                <Field name="name" type="text" v-model="inputName"/>
-                <ErrorMessage name="name" class="error"/>
+                <div style="position:relative;">
+                    <Field name="name" type="text" class="input-left" v-model="inputName"/>
+                    <ErrorMessage name="name" class="error"/>
+                </div>
             </div>
             <div class="flex">
                 <div class="fiftyWidth"><span class="right">性別</span></div>
-                <Field name="gender" type="radio" value="male" v-model="inputGender"></Field> 男
-                <Field name="gender" type="radio" value="female" v-model="inputGender"></Field> 女
-                <ErrorMessage name="gender" class="error"/>
+                <div style="position:relative;">
+                    <div class="input-left flex-select">
+                        <Field name="gender" type="radio" value="male" v-model="inputGender"></Field> 男
+                        <Field name="gender" type="radio" value="female" v-model="inputGender"></Field> 女
+                    </div>
+                    <ErrorMessage name="gender" class="error"/>
+                </div>
             </div>
             <div class="flex">
                 <div class="fiftyWidth"><span class="right">手機</span></div>
-                <Field name="phone" type="number" v-model="inputPhone"/>
-                <ErrorMessage name="phone" class="error"/>
+                <div style="position:relative;">
+                    <Field name="phone" type="number" class="input-left" v-model="inputPhone"/>
+                    <ErrorMessage name="phone" class="error"/>
+                </div>
             </div>
             <button class="btn">Submit</button>
           </Form>
@@ -78,6 +88,9 @@ export default {
   box-sizing: border-box;
   flex-direction: row;
 }
+.flex-select{
+    display:flex;
+}
 .thirtyWidth {
   width: 50%;
 }
@@ -90,10 +103,17 @@ export default {
 .right {
   float: right;
 }
+.input-left{
+    position:absolute;
+    left:0;
+}
 .error{
     color:rgb(240, 64, 64);
     margin:0;
-    display:inline;
+    position:absolute;
+    top:20px;
+    width:280px;
+    text-align: left;
 }
 .container {
   margin: 0 300px;

@@ -81,16 +81,13 @@ export default {
       this.isOpen = false
     },
     async getAssetsList () {
-    //   this.$store.commit('APP_LOADING', true)
       const { data } = await axios.get('/product/list')
       data.success && this.$store.commit('saveAxiosData', data)
-      // const data = await this.$store.dispatch('getAssetsListHandler')
-      //   this.$store.commit('APP_LOADING', false)
     },
 
     async getItemDetail (id) {
+      console.log(id)
       const { data } = await axios.get('/product/detail')
-      // data.success && this.$store.commit('saveAxiosData', data)
       const dataDetail = data.data.filter(item => item.prodId === id)
       data.success && this.$store.commit('getAxiosDataDetail', dataDetail[0])
     }
