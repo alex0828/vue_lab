@@ -17,7 +17,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <p v-for="tpi of tpis" :key="tpi.id">使用的{{tpi.title}}為{{tpi.name}}</p>
+  <p v-for="tpi of tpis" :key="tpi.id">使用的{{ tpi.title }}為{{ tpi.name }}</p>
 </template>
 
 <style scoped>
