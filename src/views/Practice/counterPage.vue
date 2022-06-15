@@ -6,7 +6,7 @@
     <div>Counter: {{ count }}</div>
       <div class="btn">
         <button @click="dec">-1</button>
-        <button @click="inc">+1</button>
+        <button @click="inc">++1</button>
       </div>
 </div>
 
@@ -17,6 +17,7 @@ import { ref } from 'vue'
 export default {
   setup () {
     const count = ref(0)
+    // 不要縮寫
     const inc = function () {
       this.count++
     }
