@@ -11,6 +11,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 export default defineComponent({
+  name:"countOneJf",
   setup() {
     const value = ref<number>(0);
     const sumValue = function (num: number) {
