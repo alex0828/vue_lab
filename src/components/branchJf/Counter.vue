@@ -8,18 +8,12 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-export default defineComponent({
-  name:"countOneJf",
-  setup() {
-    const value = ref<number>(0);
-    const sumValue = function (num: number) {
-      value.value += num;
-    };
-    return { value, sumValue };
-  },
-});
+<script lang="ts" setup>
+import { ref } from "vue";
+const value = ref<number>(0);
+const sumValue = function (num: number) {
+  value.value += num;
+};
 </script>
 <style scoped lang="scss">
 .count {
@@ -27,8 +21,8 @@ export default defineComponent({
   grid-template-columns: 1fr;
   grid-template-rows: 50px;
   gap: 10px;
-  p{
-   font-size: 32px;
+  p {
+    font-size: 32px;
   }
 }
 </style>

@@ -13,19 +13,59 @@ const routes = [
     {
         path: '/practiceJeffrey',
         name: 'practiceJeffrey',
-        redirect:'/practiceJeffrey/menu',
+        redirect:'/practiceJeffrey/menus',
         component: ()=> import('@/layer/practiceJeffrey.vue'),
         children: [
             {
-                path: 'menu',
-                name: 'jeffreyMenus',
-                component: () => import('@/components/branchJf/MenuJf.vue'),
+                path: 'menus',
+                name: 'menus',
+                component: () => import('@/components/branchJf/Menu.vue'),
             },
             {
-                path: 'count',
-                name: 'countOneJf',
-                component: () => import('@/components/branchJf/CountOneJf.vue'),
-            }
+                path: 'counter',
+                name: 'counter',
+                component: () => import('@/components/branchJf/Counter.vue'),
+            },
+            {
+                path: 'search',
+                name: 'search',
+                component: () => import('@/components/branchJf/Search.vue'),
+            },
+            {
+                path: 'filterDemo',
+                name: 'filterDemo',
+                component: () => import('@/components/branchJf/FilterDemo.vue'),
+            },
+            {
+                path: 'listDemo',
+                name: 'listDemo',
+                component: () => import('@/components/branchJf/ListDemo.vue'),
+            },
+            {
+                path: 'modalDemo',
+                name: 'modalDemo',
+                component: () => import('@/components/branchJf/ModalDemo.vue'),
+            },
+            {
+                path: 'ajaxDemo',
+                name: 'ajaxDemo',
+                component: () => import('@/components/branchJf/AjaxDemo.vue'),
+            },
+            {
+                path: 'carouselDemo',
+                name: 'carouselDemo',
+                component: () => import('@/components/branchJf/CarouselDemo.vue'),
+            },
+            {
+                path: 'refDemo',
+                name: 'refDemo',
+                component: () => import('@/components/branchJf/RefDemo.vue'),
+            },
+            {
+                path: 'counterWithState',
+                name: 'counterWithState',
+                component: () => import('@/components/branchJf/CounterWithState.vue'),
+            },
         ]
     },
     {
