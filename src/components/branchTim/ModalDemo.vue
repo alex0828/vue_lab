@@ -4,9 +4,17 @@
     <ul class="Modal">
     </ul>
   </div>
+    <div class="Modal">
+        <PopupModal>
+            <template name="title">
+                dhndndgnnd
+            </template>
+        </PopupModal>
+    </div>
 </template>
 
 <script lang="ts">
+import PopupModal from '@/components/branchTim/ModalDemo.vue'
 </script>
 <style lang="scss" scoped>
 h1 {
