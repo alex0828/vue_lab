@@ -100,9 +100,14 @@ const routes = [
                 component: () => import('@/components/branchTim/Search.vue'),
             },
             {
+                path: 'timFilterDemo',
+                name: 'timFilterDemo',
+                component: () => import('@/components/branchTim/FilterDemo.vue'),
+            },
+            {
                 path: 'timModalDemo',
                 name: 'timModalDemo',
-                component: () => import('@/components/branchJf/ModalDemo.vue'),
+                component: () => import('@/components/branchTim/ModalDemo.vue'),
             },
             {
                 path: 'timRegister',

@@ -7,13 +7,13 @@
   <div>
       <li v-for="item in findItems" :key="item">{{item}}</li>
   </div>
-  <button @click="col()">click</button>
 </template>
 
 <script lang="ts">
 import {storeToRefs} from 'pinia';
 import { userStore } from '@/store/storeTim/timStore.ts';
 import { defineComponent, toRefs, ref, computed } from 'vue';
+import { filterSearch } from '@/utils/utilsTim/FilterSearch.ts'
 
 export default defineComponent({
   name: 'timSearch',
@@ -21,20 +21,13 @@ export default defineComponent({
       const main = storeToRefs(userStore)
       const { projectThree } = main
       const inputText = ref('') //必需加'ref' or 'reactive' 才能呈現出響應是的資料 
-    const findItems = computed(()=>{
-        return projectThree.filter((item) => item.toLowerCase().includes(inputText.value.toLowerCase()))
-    })
-
-    const col = ()=>{
-        console.log(main)
-    }
+    const findItems = filterSearch(inputText, projectThree)
 
     return {
         inputText,
         main,
         findItems,
-        projectThree,
-        col
+        projectThree
     };
   }
 });

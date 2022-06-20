@@ -34,13 +34,14 @@
                     <ErrorMessage name="phone" class="error"/>
                 </div>
             </div>
-            <button class="btn">Submit</button>
+            <div class="btn-outbox"><button class="btn">Submit</button></div>
           </Form>
-          <button class="btn"  @click="clear">Clear</button>
+          <div class="btn-outbox"><button class="btn"  @click="clear">Clear</button></div>
       </div>
 </div>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent, ref, computed } from 'vue';
 import { Field, Form, ErrorMessage } from 'vee-validate'
 import * as yup from 'yup'
 export default defineComponent({
@@ -50,7 +51,11 @@ export default defineComponent({
     Form,
     ErrorMessage
   },
-  data () {
+  setup() {
+    const inputIdentity = ref<string>('') 
+    const inputName = ref<string>('')
+    const inputGender = ref<string>('')
+    const inputPhone = ref<string>('')
     const schema = yup.object({
       identity: yup.string().required(() => ('此欄位為必填欄位。')).matches(/^[a-zA-Z]\d{9}$/, '輸入格式錯誤，請重新輸入。'),
       gender: yup.string().required(() => ('此欄位為必填欄位。')),
@@ -59,14 +64,14 @@ export default defineComponent({
     })
     return {
       schema,
-      inputIdentity: '',
-      inputName: '',
-      inputGender: '',
-      inputPhone: ''
+      inputIdentity,
+      inputName,
+      inputGender,
+      inputPhone
     }
   },
   methods: {
-    onSubmit (values) {
+    onSubmit () {
       // Submit values to API...
       alert('身份證:' + this.inputIdentity + ', 姓名:' + this.inputName + ', 性別:' + this.inputGender + ', 手機:' + this.inputPhone)
     },
@@ -112,7 +117,7 @@ export default defineComponent({
     color:rgb(240, 64, 64);
     margin:0;
     position:absolute;
-    top:20px;
+    top:28px;
     width:280px;
     text-align: left;
 }
@@ -127,6 +132,14 @@ export default defineComponent({
 .btn {
   width: 100px;
   height: 24px;
-  margin:4px 0;
+  margin:4px 0 !important;
+}
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.btn-outbox{
+    width:100%;
+    display: flex;
+    justify-content: center;
 }
 </style>
