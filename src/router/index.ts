@@ -105,6 +105,11 @@ const routes = [
                 component: () => import('@/components/branchTim/FilterDemo.vue'),
             },
             {
+                path: 'timListDemo',
+                name: 'timListDemo',
+                component: () => import('@/components/branchTim/ListDemo.vue'),
+            },
+            {
                 path: 'timModalDemo',
                 name: 'timModalDemo',
                 component: () => import('@/components/branchTim/ModalDemo.vue'),

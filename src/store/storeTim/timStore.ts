@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 export const userStore = defineStore('user', {
     state: () => ({
-        projectThree: <string[]>[
+        filterSearchProject: <string[]>[
             "Ada",
             "Aaliyah",
             "Adela",
@@ -15,28 +15,8 @@ export const userStore = defineStore('user', {
             "Eudora",
             "Gemma",
         ],
-        projectFive: <string[]>['AAA', 'BBB', 'CCC', 'DDD'],
-        projectLight: {
-            lightBoxShowSeven: false,
-            lightBoxShowNine: false
-        },
-        projectNine: {
-            dataDetail: []
-        },
-        projectTwelve:{
-            count:0
-        }
+        listDemoProject: <string[]>['AAA', 'BBB', 'CCC']
     }),
     getters: {},
-    actions: {
-        lightBoxSevenChange() {
-            this.projectLight.lightBoxShowSeven = !this.projectLight.lightBoxShowSeven;
-        },
-        lightBoxNineChange() {
-            this.projectLight.lightBoxShowNine = !this.projectLight.lightBoxShowNine;
-        },
-        countChangeTwelve(num:number){
-            this.projectTwelve.count += num
-        }
-    }
+    actions: {}
 })

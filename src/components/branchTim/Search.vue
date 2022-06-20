@@ -18,16 +18,16 @@ import { filterSearch } from '@/utils/utilsTim/FilterSearch.ts'
 export default defineComponent({
   name: 'timSearch',
   setup() {
-      const main = storeToRefs(userStore)
-      const { projectThree } = main
+      const store = userStore();
       const inputText = ref('') //必需加'ref' or 'reactive' 才能呈現出響應是的資料 
-    const findItems = filterSearch(inputText, projectThree)
+    const findItems = computed(()=>{
+        return filterSearch(inputText.value, store.filterSearchProject)
+
+    })
 
     return {
         inputText,
-        main,
-        findItems,
-        projectThree
+        findItems
     };
   }
 });
