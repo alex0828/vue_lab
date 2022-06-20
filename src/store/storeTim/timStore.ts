@@ -17,15 +17,18 @@ export const userStore = defineStore('user', {
         ],
         listDemoProject: <string[]>['AAA', 'BBB', 'CCC'],
 
-        count:0 as number
+        counter:{
+            count:0
+        }
+        
     }),
     getters: {},
     actions: {
         increase(){
-            this.count ++
+            this.counter.count ++
         },
         decrease(){
-            this.count -= 1
+            this.counter.count -= 1
         }
     }
 })

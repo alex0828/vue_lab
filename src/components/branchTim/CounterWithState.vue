@@ -17,21 +17,16 @@ export default defineComponent({
   name: 'RefDemo',
   setup(){
       const store = userStore()
-      const count = computed(()=>{
-          return store.count
-      })
-      const increase = function(){
-          store.increase()
-          },
-      const decrease = function(){
-          store.decrease()
-          }
-
-      return {
-          count,
-          increase,
-          decrease
-      }
+    const count = computed(()=>{
+        return store.counter.count
+    })
+    const increase = function(){store.increase()}
+    const decrease = function(){store.decrease()}
+    return{
+        count,
+        increase,
+        decrease
+    }
   }
 })
 </script>
