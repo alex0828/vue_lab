@@ -15,8 +15,17 @@ export const userStore = defineStore('user', {
             "Eudora",
             "Gemma",
         ],
-        listDemoProject: <string[]>['AAA', 'BBB', 'CCC']
+        listDemoProject: <string[]>['AAA', 'BBB', 'CCC'],
+
+        count:0 as number
     }),
     getters: {},
-    actions: {}
+    actions: {
+        increase(){
+            this.count ++
+        },
+        decrease(){
+            this.count -= 1
+        }
+    }
 })

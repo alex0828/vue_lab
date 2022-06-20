@@ -67,13 +67,13 @@ const routes = [
                 component: () => import('@/components/branchJf/CounterWithState.vue'),
             },
             {
-                path: 'timFilterDemo',
-                name: 'timFilterDemo',
+                path: 'FilterDemo',
+                name: 'FilterDemo',
                 component: () => import('@/components/branchJf/FilterDemo.vue'),
             },
             {
-                path: 'timListDemo',
-                name: 'timListDemo',
+                path: 'ListDemo',
+                name: 'ListDemo',
                 component: () => import('@/components/branchJf/ListDemo.vue'),
             },
         ]
@@ -128,6 +128,11 @@ const routes = [
                 path: 'timRefDemo',
                 name: 'timRefDemo',
                 component: () => import('@/components/branchTim/RefDemo.vue'),
+            },
+            {
+                path: 'timCounterWithState',
+                name: 'timCounterWithState',
+                component: () => import('@/components/branchTim/CounterWithState.vue'),
             },
         ]
     },
