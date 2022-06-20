@@ -44,7 +44,6 @@
     <div class="background-black" v-show="isOpen"></div>
 </div>
 </template>
--->
 // <script>
 // import Popup from '@/components/branchTim/PopupModal.vue'
 // import axios from 'axios'
