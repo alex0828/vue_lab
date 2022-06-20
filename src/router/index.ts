@@ -42,6 +42,11 @@ const routes = [
                 component: () => import('@/components/branchJf/ListDemo.vue'),
             },
             {
+                path: 'register',
+                name: 'register',
+                component: () => import('@/components/branchJf/Register.vue'),
+            },
+            {
                 path: 'modalDemo',
                 name: 'modalDemo',
                 component: () => import('@/components/branchJf/ModalDemo.vue'),

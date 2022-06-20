@@ -15,7 +15,7 @@
         Cart.message
       }}
     </ul>
-    <PopupModal>
+    <PopupModal :lightBoxShow="nineBoxShow">
       <ul v-if="isSuccessCartDetail">
         <li><img :src="CartDetailpool.data.prodImg" alt="" /></li>
         <li><b>產品 id :</b> {{ CartDetailpool.data.prodId }}</li>
@@ -39,12 +39,11 @@ import { projectFirestore } from "@/utils/firebase/config";
 import { userStore } from "@/store/storeJf/index.ts";
 import PopupModal from "@/components/branchJf/PopupModal.vue";
 import { computed, onMounted, ref } from "vue";
-const store = userStore();
 const Cart = ref<object>({});
 const CartDetail = ref<object>({});
 const isSuccessCart = ref<boolean>(true);
 const isSuccessCartDetail = ref<boolean>(false);
-
+const nineBoxShow = ref<boolean>(false);
 const Cartpool = computed(() => {
   return Cart.value;
 });
@@ -60,10 +59,11 @@ const lightBoxOpen = async function (id: number) {
       isSuccessCartDetail.value = res.exists;
       throw new Error("查無資料");
     }
-    store.lightBoxNineChange();
+    
+    nineBoxShow.value = !nineBoxShow.value
     CartDetail.value = { isSuccess: true, data: { ...res.data(), prodId: id } };
   } catch (error) {
-    store.lightBoxNineChange();
+    nineBoxShow.value = !nineBoxShow.value
     CartDetail.value = { isSuccess: true, data: { message: error } };
   }
 };
@@ -85,7 +85,7 @@ const getList = async function () {
   }
 };
 const lightBoxClose = function () {
-  store.lightBoxNineChange();
+  nineBoxShow.value = !nineBoxShow.value
 };
 onMounted(() => {
   getList();

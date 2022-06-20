@@ -6,6 +6,7 @@
     <router-link :to="{ path: 'search' }"> Search </router-link>
     <router-link :to="{ path: 'filterDemo' }"> FilterDemo </router-link>
     <router-link :to="{ path: 'listDemo' }"> ListDemo </router-link>
+    <router-link :to="{ path: 'register' }"> Register </router-link>
     <router-link :to="{ path: 'modalDemo' }"> ModalDemo </router-link>
     <router-link :to="{ path: 'ajaxDemo' }"> AjaxDemo </router-link>
     <router-link :to="{ path: 'refDemo' }"> RefDemo </router-link>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 定錨到主畫面 -->
-    <teleport v-if="isOpenState" to="#app">
+    <teleport v-if="props.lightBoxShow" to="#app">
       <div class="black">
         <div class="container">
           <h4>Demo Modal</h4>
@@ -17,12 +17,12 @@
 </template>
 
 <script lang="ts" setup>
-import { userStore } from "@/store/storeJf/index.ts";
-import { computed, ref } from "vue";
-const store = userStore();
-const isOpenState = computed(() => {
-  return store.projectLight.lightBoxShowSeven;
-});
+const props = defineProps({
+  lightBoxShow:{
+    type:String,
+    default:true,
+  }
+})
 </script>
 
 <style lang="scss" scoped>
