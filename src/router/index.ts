@@ -69,12 +69,12 @@ const routes = [
             {
                 path: 'timFilterDemo',
                 name: 'timFilterDemo',
-                component: () => import('@/components/branchTim/FilterDemo.vue'),
+                component: () => import('@/components/branchJf/FilterDemo.vue'),
             },
             {
                 path: 'timListDemo',
                 name: 'timListDemo',
-                component: () => import('@/components/branchTim/ListDemo.vue'),
+                component: () => import('@/components/branchJf/ListDemo.vue'),
             },
         ]
     },
@@ -118,6 +118,16 @@ const routes = [
                 path: 'timRegister',
                 name: 'timRegister',
                 component: () => import('@/components/branchTim/Register.vue'),
+            },
+            {
+                path: 'timAjaxDemo',
+                name: 'timAjaxDemo',
+                component: () => import('@/components/branchTim/AjaxDemo.vue'),
+            },
+            {
+                path: 'timRefDemo',
+                name: 'timRefDemo',
+                component: () => import('@/components/branchTim/RefDemo.vue'),
             },
         ]
     },

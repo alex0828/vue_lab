@@ -8,6 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/mockjs": "^1.0.6",
+    "axios": "^0.27.2",
+    "mock": "^0.1.1",
     "pinia": "^2.0.14",
     "vue": "^3.2.25",
     "yup": "^0.32.11"
