@@ -94,6 +94,9 @@ export default defineComponent({
   box-sizing: border-box;
   flex-direction: row;
 }
+h1 {
+  text-align: center;
+}
 .flex-select{
     display:flex;
 }

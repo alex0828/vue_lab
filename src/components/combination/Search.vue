@@ -1,11 +1,13 @@
 <template>
   <div class="practice">
-    <h1>Search</h1>
+    <h1 class="mainTitle">Search</h1>
   </div>
-  <input class="search_btn" type="text" placeholder="Search" v-model="inputText"/>
-  <div>查詢到{{ findItems.length }}筆資料</div>
-  <div>
-      <li v-for="item in findItems" :key="item">{{item}}</li>
+  <div class="searchCard">
+      <input class="search_btn" type="text" placeholder="Search" v-model="inputText"/>
+      <div>查詢到{{ findItems.length }}筆資料</div>
+      <div>
+          <li class="item" v-for="item in findItems" :key="item">{{item}}</li>
+      </div>
   </div>
 </template>
 
@@ -33,17 +35,26 @@ export default defineComponent({
 </script>
 
 <style scoped>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.mainTitle {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.searchCard{
+    width:300px;
+    height:auto;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.item{
+    list-style-type:none;
 }
 .search_btn{
     width:200px;
     height:40px;
     font-size:16px;
+    margin:auto;
 }
+
 </style>

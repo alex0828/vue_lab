@@ -36,6 +36,9 @@ input {
   padding: 20px;
   background: rgb(235, 235, 235);
 }
+h1 {
+  text-align: center;
+}
 .btn{
     margin-top:20px;
     width:200px;

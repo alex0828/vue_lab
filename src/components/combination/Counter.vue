@@ -1,53 +1,41 @@
 <template>
   <div class="practice">
-    <h1>Counter</h1>
+    <h1 class="mainTitle">Counter</h1>
   </div>
-  <div>Counter: {{ count }}</div>
+  <div class="result" >Counter: {{ count.count }}</div>
   <div class="btn">
-    <button @click="decrease">-1</button>
-    <button @click="increase">+1</button>
+    <button @click="editValue(-1)">-1</button>
+    <button @click="editValue(1)">+1</button>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, reactive, toRefs, ref } from 'vue';
-
-export default defineComponent({
-  name: 'timCounter',
-  setup() {
-      const age = ref<number | string>(25)
-
+<script lang="ts" setup>
+import {reactive, ref } from 'vue';
+import { sumValue } from '@/utils/utilsCombine/Counter.ts'
     const count = reactive({
         count: 0 as number 
     })
-    const increase = function () {
-      count.count += 1 ;
-    };
-    const decrease = function () {
-      count.count -= 1;
-    };
-
-    return {
-      decrease,
-      increase,
-        ...toRefs(count),
-      age
-    };
-  },
-});
+    /**
+     * @description 計算動態數字的加減法
+     * @param {number} 帶入的參數決定加一或減一  
+     * @return {number} 加減後的數字結果
+     */
+    const editValue = function(num : number){
+        count.count = sumValue(count.count, num)
+    }
 </script>
 
 <style scoped>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.mainTitle {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.result{
+    text-align: center;
 }
 .btn {
-  margin: 10px;
+    width:120px;
+    padding: auto;
+  margin: auto;
 }
 .btn button {
   width: 40px;
