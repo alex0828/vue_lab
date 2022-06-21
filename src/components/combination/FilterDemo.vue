@@ -15,6 +15,8 @@ export default defineComponent({
   name: 'timFilter',
   setup() {
       const inputNumber = ref<number | string>('') 
+
+    //https://5xruby.tw/posts/15min-regular-expression  
     const filterNumber = computed(()=>{
         return inputNumber.value === '' ? '' : inputNumber.value.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
     })

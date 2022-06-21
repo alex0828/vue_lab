@@ -20,7 +20,7 @@ export default defineComponent({
   name: 'combineSearch',
   setup() {
       const store = userStore();
-      const inputText = ref('') //必需加'ref' or 'reactive' 才能呈現出響應是的資料 
+      const inputText = ref('') 
     const findItems = computed(()=>{
         return filterSearch(inputText.value, store.filterSearchProject)
 
