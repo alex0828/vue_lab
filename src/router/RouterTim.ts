@@ -51,6 +51,11 @@ const routerTim = {
             component: () => import('@/components/branchTim/RefDemo.vue'),
         },
         {
+            path: 'timCarouselDemo',
+            name: 'timCarouselDemo',
+            component: () => import('@/components/branchTim/CarouselDemo.vue'),
+        },
+        {
             path: 'timCounterWithState',
             name: 'timCounterWithState',
             component: () => import('@/components/branchTim/CounterWithState.vue'),

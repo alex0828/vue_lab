@@ -46,7 +46,8 @@ export const userStore = defineStore('Tim', {
         async fetchUsers() {
             try {
               const {data} = await axios.get('/product/list')
-              this.apiList = data
+              this.apiList = data.data
+              console.log(data.data)
               }
               catch (error) {
                   console.log(mock)
