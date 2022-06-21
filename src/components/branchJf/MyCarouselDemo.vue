@@ -1,12 +1,19 @@
 <template>
   <div class="owl-carousel owl-theme" ref="owl">
-    <img :src="item.prodImg" alt="" v-for="item of carousel" :key="item" />
+    <!-- <img :src="item.prodImg" alt="" v-for="item of carousel" :key="item" /> -->
   </div>
+  <Carousel :items-to-show="4" :autoplay="1000" :loop="true" :wrapAround="true">
+    <Slide v-for="item of carousel" :key="item">
+    <img :src="item.prodImg" alt="">
+    </Slide>
+  </Carousel>
 </template>
 
 <script lang="ts" setup>
 import { projectFirestore } from "@/utils/firebase/config";
 import { nextTick, onMounted, ref } from "vue";
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 const carousel = ref<object[]>([]);
 const getList = async function () {
   try {
@@ -17,16 +24,16 @@ const getList = async function () {
     carousel.value = res.docs.map((doc) => {
       return { ...doc.data() };
     });
-    nextTick(() => {
-      $(".owl-carousel").owlCarousel({
-        items: 3,
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 1000,
-        autoplayHoverPause: true,
-      });
-    });
+    // nextTick(() => {
+    //   $(".owl-carousel").owlCarousel({
+    //     items: 3,
+    //     loop: true,
+    //     margin: 10,
+    //     autoplay: true,
+    //     autoplayTimeout: 1000,
+    //     autoplayHoverPause: true,
+    //   });
+    // });
   } catch (error) {
     carousel.value = { message: error };
   }
