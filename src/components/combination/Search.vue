@@ -3,9 +3,9 @@
     <h1 class="mainTitle">Search</h1>
   </div>
   <div class="searchCard">
-      <input class="search_btn" type="text" placeholder="Search" v-model="inputText"/>
-      <div>查詢到{{ findItems.length }}筆資料</div>
-      <div>
+      <input class="searchBtn" type="text" placeholder="Search" v-model="inputText"/>
+      <div id="resultDetail">查詢到{{ findItems.length }}筆資料</div>
+      <div class="result">
           <li class="item" v-for="item in findItems" :key="item">{{item}}</li>
       </div>
   </div>
@@ -39,19 +39,34 @@ export default defineComponent({
   text-align: center;
 }
 .searchCard{
-    width:300px;
     height:auto;
     margin:auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color:#eee;
+    padding:12px;
+    margin:12px;
+}
+.result{
+    width:96%;
+    background-color:rgb(255, 255, 255);
+    margin:auto;
+    margin-top:20px;
     text-align: center;
 }
 .item{
     list-style-type:none;
+    border:1px solid #eee;
+    padding:12px;
 }
-.search_btn{
-    width:200px;
+#resultDetail{
+    width:96%;
+    margin:auto;
+    margin-top:20px;
+}
+.searchBtn{
+    width:96%;
     height:40px;
     font-size:16px;
     margin:auto;
