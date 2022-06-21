@@ -43,13 +43,12 @@ export default defineComponent({
           return store.apiList
       })
 
-      const getAssetsList = async function(){
-          const { data } = await axios.get('/product/list')
-            data.success && store.saveAxiosData(data)
+      const getAssetsList = function(){
+          store.fetchUsers()
       }
 
       onMounted(() => {
-          getAssetsList
+          getAssetsList()
       })
 
 

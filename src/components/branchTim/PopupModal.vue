@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-import { userStore } from "@/store/storeJf/index.ts";
+import { userStore } from "@/store/storeTim/timStore.ts";
 import { computed, ref } from "vue";
 const store = userStore();
 const isOpenState = computed(() => {

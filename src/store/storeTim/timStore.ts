@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import product from '@/server/index';
+import axios from 'axios'
 export const userStore = defineStore('user', {
     state: () => ({
         filterSearchProject: <string[]>[
@@ -42,17 +42,15 @@ export const userStore = defineStore('user', {
             this.counter.count -= 1
         },
 
-        getAssetsListHandler ({ commit }) {
-            return new Promise(resolve => {
-              try {
-                product({ methods: 'get' }).then((res) => resolve(res))
-              } catch (err) {
-                resolve({ data: { code: -1, msg: err, success: false } })
+        async fetchUsers() {
+            try {
+              const {data} = await axios.get('/product/list')
+              this.apiList = data
               }
-            })
-        },
-        saveAxiosData(data){
-            this.apiList = data
-        }
+              catch (error) {
+                  alert(error)
+                  console.log(error)
+              }
+          }
     }
 })
