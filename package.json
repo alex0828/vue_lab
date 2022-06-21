@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/mockjs": "^1.0.6",
     "axios": "^0.27.2",
     "mockjs": "^1.1.0",
     "pinia": "^2.0.14",
