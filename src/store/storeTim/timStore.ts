@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import mock from "@/mock/index"
 import axios from 'axios'
 export const userStore = defineStore('user', {
     state: () => ({
@@ -48,6 +49,7 @@ export const userStore = defineStore('user', {
               this.apiList = data
               }
               catch (error) {
+                  console.log(mock)
                   alert(error)
                   console.log(error)
               }

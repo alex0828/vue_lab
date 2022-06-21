@@ -15,3 +15,5 @@ Mock.mock('/product/detail', {
   data: demoDetail,
   success: true
 })
+
+export default Mock.mock
