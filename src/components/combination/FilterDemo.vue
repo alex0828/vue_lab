@@ -1,9 +1,11 @@
 <template>
   <div class="practice">
-    <h1>Filter Demo</h1>
+    <h1 class="mainTitle">Filter Demo</h1>
   </div>
-  <input class="search_btn" type="number" v-model="inputNumber"/>
-  <h2>轉換後的數字： {{filterNumber}}</h2>
+  <div class="filterCard">
+      <input class="search_btn" type="number" v-model="inputNumber"/>
+      <h3 class="result">轉換後的數字： {{filterNumber}}</h3>
+  </div>
 </template>
 
 <script lang="ts">
@@ -26,13 +28,28 @@ export default defineComponent({
 </script>
 
 <style scoped>
-h1 {
+.mainTitle {
   text-align: center;
 }
+.filterCard{
+    height:auto;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#eee;
+    padding:12px;
+    margin:12px;
+}
 .search_btn{
-    width:200px;
+    width:96%;
+    margin:auto;
     height:40px;
     font-size:16px;
+}
+.result{
+    width:96%;
+    margin:20px auto 12px auto;
 }
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
