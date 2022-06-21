@@ -1,4 +1,3 @@
-<!--
 <template>
 <div>
     <div class="practice">
@@ -44,57 +43,57 @@
     <div class="background-black" v-show="isOpen"></div>
 </div>
 </template>
-// <script>
-// import Popup from '@/components/branchTim/PopupModal.vue'
-// import axios from 'axios'
-// export default {
-//   name: 'ProjectThree',
-//   axios,
-//   components: {
-//     Popup
-//   },
-//   data () {
-//     return {
-//       title: "Wow, You're reading this text in a modal",
-//       btnText: 'Close Detail'
-//     }
-//   },
-//   computed: {
-//     isOpen () {
-//       return this.$store.state.ModalDemo.isOpen
-//     },
-//     axiosDataList () {
-//       return this.$store.state.AxiosList.data
-//     },
-//     AxiosDetail () {
-//       return this.$store.state.AxiosDetail
-//     }
-//   },
-//   mounted () {
-//     this.getAssetsList()
-//   },
-//   methods: {
-//     OpenModal (id) {
-//       this.getItemDetail(id)
-//       this.$store.commit('changeOpen')
-//     },
-//     CloseModal () {
-//       this.isOpen = false
-//     },
-//     async getAssetsList () {
-//       const { data } = await axios.get('/product/list')
-//       data.success && this.$store.commit('saveAxiosData', data)
-//     },
+<script lang="ts">
+import Popup from '@/components/branchTim/PopupModal.vue'
+import axios from 'axios'
+export default {
+  name: 'ProjectThree',
+  axios,
+  components: {
+    Popup
+  },
+  setup () {
+      btnText = 'Close Detail'
+    return {
+      btnText
+    }
+  },
+  computed: {
+    isOpen () {
+      return this.$store.state.ModalDemo.isOpen
+    },
+    axiosDataList () {
+      return this.$store.state.AxiosList.data
+    },
+    AxiosDetail () {
+      return this.$store.state.AxiosDetail
+    }
+  },
+  mounted () {
+    this.getAssetsList()
+  },
+  methods: {
+    OpenModal (id) {
+      this.getItemDetail(id)
+      this.$store.commit('changeOpen')
+    },
+    CloseModal () {
+      this.isOpen = false
+    },
+    async getAssetsList () {
+      const { data } = await axios.get('/product/list')
+      data.success && this.$store.commit('saveAxiosData', data)
+    },
 
-//     async getItemDetail (id) {
-//       console.log(id)
-//       const { data } = await axios.get('/product/detail')
-//       const dataDetail = data.data.filter(item => item.prodId === id)
-//       data.success && this.$store.commit('getAxiosDataDetail', dataDetail[0])
-//     }
-//   }
-// }
-// </script>
+    async getItemDetail (id) {
+      console.log(id)
+      const { data } = await axios.get('/product/detail')
+      const dataDetail = data.data.filter(item => item.prodId === id)
+      data.success && this.$store.commit('getAxiosDataDetail', dataDetail[0])
+    }
+  }
+}
+</script>
 
 <style scoped>
 :hover.btn{

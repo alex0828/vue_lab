@@ -16,7 +16,10 @@ export const userStore = defineStore('user', {
             "Gemma",
         ],
         listDemoProject: <string[]>['AAA', 'BBB', 'CCC'],
-
+        projectLight: {
+            lightBoxShowSeven: false,
+            lightBoxShowNine: false
+        },
         counter:{
             count:0
         }
@@ -24,6 +27,12 @@ export const userStore = defineStore('user', {
     }),
     getters: {},
     actions: {
+        lightBoxSevenChange() {
+            this.projectLight.lightBoxShowSeven = !this.projectLight.lightBoxShowSeven;
+        },
+        lightBoxNineChange() {
+            this.projectLight.lightBoxShowNine = !this.projectLight.lightBoxShowNine;
+        },
         increase(){
             this.counter.count ++
         },

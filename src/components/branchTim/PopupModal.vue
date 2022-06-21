@@ -1,63 +1,57 @@
 <template>
-    <div id="modal">
-        <div>Demo Modal</div>
-        <div class="line"> </div>
-         <div>
-            <slot name="image"></slot>
+  <div>
+    <!-- 定錨到主畫面 -->
+    <teleport v-if="isOpenState" to="#app">
+      <div class="black">
+        <div class="container">
+          <h4>Demo Modal</h4>
+          <hr />
+          <!-- 父層級傳入 slot -->
+          <div class="inner">
+            <slot />
+          </div>
         </div>
-        <p>
-            <slot name="title"></slot>
-        </p>
-        <p>
-            <slot name="name"></slot>
-        </p>
-        <p>
-            <slot name="amount"></slot>
-        </p>
-        <p>
-            <slot name="width"></slot>
-        </p>
-        <p>
-            <slot name="height"></slot>
-        </p>
-        <p>
-            <slot name="weight"></slot>
-        </p>
-        <div class="line"> </div>
-         <button class="btn" @click="CloseModal">
-            <slot name="button"></slot>
-        </button>
-    </div>
+      </div>
+    </teleport>
+  </div>
 </template>
 
-<script>
-export default {
-  name: 'MyPopup',
-  methods: {
-    CloseModal () {
-      this.$store.commit('changeClose')
-    }
-  }
-}
+<script lang="ts" setup>
+import { userStore } from "@/store/storeJf/index.ts";
+import { computed, ref } from "vue";
+const store = userStore();
+const isOpenState = computed(() => {
+  return store.projectLight.lightBoxShowSeven;
+});
 </script>
 
-<style scoped>
-
-.line{
-    margin:12px 0;
-    border-bottom:solid silver 0.5px ;
+<style lang="scss" scoped>
+h4 {
+  text-align: center;
 }
-:hover.btn{
-    background-color:rgb(66, 110, 230);
-}
-.btn {
-    width:200px;
-    height:64px;
-    background-color:rgb(33, 83, 218);
-    color:white;
-    border-radius: 4px;
-    border: 0;
-    font-size:16px;
-    cursor:pointer;
+.black {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.541);
+  .container {
+    background: #fff;
+    width: 50%;
+    padding: 8px;
+    border-radius: 8px;
+    .inner {
+      display: grid;
+      gap: 10px;
+      grid-template-rows: auto;
+      justify-content: center;
+    }
+  }
 }
 </style>
