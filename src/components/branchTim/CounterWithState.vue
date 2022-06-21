@@ -8,7 +8,7 @@
     <button @click="increase">+1</button>
   </div>
 </template>
-<script>
+<script scoped>
 
 import {storeToRefs} from 'pinia';
 import { userStore } from '@/store/storeTim/timStore.ts';
