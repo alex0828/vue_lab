@@ -1,5 +1,5 @@
 <template>
-  <h4>Tim 練習項目清單</h4>
+  <router-view></router-view>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";

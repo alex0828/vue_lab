@@ -12,7 +12,7 @@ export default defineComponent({
     projectHeader,
   },
   setup() {
-    const list = ref<string[]>(["home", "about","practiceJeffrey"]);
+    const list = ref<string[]>(["home", "about","practiceTim", "practiceJeffrey"]);
     return { list };
   },
 });

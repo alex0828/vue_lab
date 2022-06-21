@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import routerJeffrey from './RouterJf'
+import routerTim from './RouterTim'
 const routes = [
     {
         path: '/',
@@ -12,6 +13,7 @@ const routes = [
         component: () => import('@/layer/About.vue')
     },
     routerJeffrey,
+    routerTim
     
 ]
 
