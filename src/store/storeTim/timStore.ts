@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import mock from "@/mock/index"
 import axios from 'axios'
-export const userStore = defineStore('user', {
+export const userStore = defineStore('Tim', {
     state: () => ({
         filterSearchProject: <string[]>[
             "Ada",

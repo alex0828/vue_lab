@@ -15,7 +15,7 @@ import { defineComponent, toRefs, ref, computed } from 'vue';
 import { filterSearch } from '@/utils/utilsCombine/FilterSearch.ts'
 
 export default defineComponent({
-  name: 'timSearch',
+  name: 'combineSearch',
   setup() {
       const store = userStore();
       const inputText = ref('') //必需加'ref' or 'reactive' 才能呈現出響應是的資料 

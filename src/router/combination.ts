@@ -6,7 +6,7 @@ const routerJeffrey = {
     children: [
         {
             path: 'menus',
-            name: 'menus',
+            name: 'menuscom',
             component: () => import('@/components/combination/Menu.vue')
         },
         {
@@ -16,47 +16,47 @@ const routerJeffrey = {
         },
         {
             path: 'search',
-            name: 'search',
+            name: 'combineSearch',
             component: () => import('@/components/combination/Search.vue'),
         },
         {
             path: 'filterDemo',
-            name: 'filterDemo',
+            name: 'combineFilterDemo',
             component: () => import('@/components/combination/FilterDemo.vue'),
         },
         {
             path: 'listDemo',
-            name: 'listDemo',
+            name: 'combineListDemo',
             component: () => import('@/components/combination/ListDemo.vue'),
         },
         {
             path: 'register',
-            name: 'register',
+            name: 'combineRegister',
             component: () => import('@/components/combination/Register.vue'),
         },
         {
             path: 'modalDemo',
-            name: 'modalDemo',
+            name: 'combineModalDemo',
             component: () => import('@/components/combination/ModalDemo.vue'),
         },
         {
             path: 'ajaxDemo',
-            name: 'ajaxDemo',
+            name: 'combineAjaxDemo',
             component: () => import('@/components/combination/AjaxDemo.vue'),
         },
         {
             path: 'carouselDemo',
-            name: 'carouselDemo',
+            name: 'combineCarouselDemo',
             component: () => import('@/components/combination/CarouselDemo.vue'),
         },
         {
             path: 'refDemo',
-            name: 'refDemo',
+            name: 'combineRefDemo',
             component: () => import('@/components/combination/RefDemo.vue'),
         },
         {
             path: 'counterWithState',
-            name: 'counterWithState',
+            name: 'combineCounterWithState',
             component: () => import('@/components/combination/CounterWithState.vue'),
         },
     ]

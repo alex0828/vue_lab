@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-export const userStore = defineStore('user', {
+export const userStore = defineStore('Combine', {
     state: () => ({
         filterSearchProject: <string[]>[
             "Ada",

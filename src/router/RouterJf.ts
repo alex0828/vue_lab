@@ -11,52 +11,52 @@ const routerJeffrey = {
         },
         {
             path: 'counter',
-            name: 'counter',
+            name: 'JFcounter',
             component: () => import('@/components/branchJf/Counter.vue'),
         },
         {
             path: 'search',
-            name: 'search',
+            name: 'JFsearch',
             component: () => import('@/components/branchJf/Search.vue'),
         },
         {
             path: 'filterDemo',
-            name: 'filterDemo',
+            name: 'JFfilterDemo',
             component: () => import('@/components/branchJf/FilterDemo.vue'),
         },
         {
             path: 'listDemo',
-            name: 'listDemo',
+            name: 'JFlistDemo',
             component: () => import('@/components/branchJf/ListDemo.vue'),
         },
         {
             path: 'register',
-            name: 'register',
+            name: 'JFregister',
             component: () => import('@/components/branchJf/Register.vue'),
         },
         {
             path: 'modalDemo',
-            name: 'modalDemo',
+            name: 'JFmodalDemo',
             component: () => import('@/components/branchJf/ModalDemo.vue'),
         },
         {
             path: 'ajaxDemo',
-            name: 'ajaxDemo',
+            name: 'JFajaxDemo',
             component: () => import('@/components/branchJf/AjaxDemo.vue'),
         },
         {
             path: 'carouselDemo',
-            name: 'carouselDemo',
+            name: 'JFcarouselDemo',
             component: () => import('@/components/branchJf/CarouselDemo.vue'),
         },
         {
             path: 'refDemo',
-            name: 'refDemo',
+            name: 'JFrefDemo',
             component: () => import('@/components/branchJf/RefDemo.vue'),
         },
         {
             path: 'counterWithState',
-            name: 'counterWithState',
+            name: 'JFcounterWithState',
             component: () => import('@/components/branchJf/CounterWithState.vue'),
         },
     ]

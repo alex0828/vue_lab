@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-export const userStore = defineStore('user', {
+export const userStore = defineStore('JF', {
     state: () => ({
         projectThree: <string[]>[
             "Ada",
