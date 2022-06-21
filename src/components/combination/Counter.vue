@@ -20,7 +20,6 @@ export default defineComponent({
     const count = reactive({
         count: 0 as number 
     })
-    // 不要縮寫
     const increase = function () {
       count.count += 1 ;
     };

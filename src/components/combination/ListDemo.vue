@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { storeToRefs } from 'pinia';
-import { userStore } from '@/store/storeTim/timStore.ts';
+import { userStore } from "@/store/storeCombine/index.ts";
 import { defineComponent, computed, toRef, reactive } from 'vue';
 export default defineComponent({
   name: 'timList',

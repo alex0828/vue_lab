@@ -1,5 +1,5 @@
 <template>
-  <h4>Jeffrey 練習項目清單</h4>
+  <h4>練習項目清單</h4>
   <div class="list">
     <router-link :to="{ name: 'home' }"> Home </router-link>
     <router-link :to="{ path: 'counter' }"> Counter </router-link>

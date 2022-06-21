@@ -10,10 +10,9 @@
 </template>
 
 <script lang="ts">
-import {storeToRefs} from 'pinia';
-import { userStore } from '@/store/storeTim/timStore.ts';
+import { userStore } from "@/store/storeCombine/index.ts";
 import { defineComponent, toRefs, ref, computed } from 'vue';
-import { filterSearch } from '@/utils/utilsTim/FilterSearch.ts'
+import { filterSearch } from '@/utils/utilsCombine/FilterSearch.ts'
 
 export default defineComponent({
   name: 'timSearch',

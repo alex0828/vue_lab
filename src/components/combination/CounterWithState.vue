@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts" setup>
-import { userStore } from "@/store/storeJf/index.ts";
+import { userStore } from "@/store/storeCombine/index.ts";
 import { computed } from "vue-demi";
 const store = userStore();
 const count = computed(() => {
