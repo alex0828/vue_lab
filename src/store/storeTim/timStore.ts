@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import product from '';
+import product from '@/server/index';
 export const userStore = defineStore('user', {
     state: () => ({
         filterSearchProject: <string[]>[
@@ -23,7 +23,8 @@ export const userStore = defineStore('user', {
         },
         counter:{
             count:0
-        }
+        },
+        apiList: []
         
     }),
     getters: {},
@@ -40,15 +41,18 @@ export const userStore = defineStore('user', {
         decrease(){
             this.counter.count -= 1
         },
+
         getAssetsListHandler ({ commit }) {
             return new Promise(resolve => {
               try {
                 product({ methods: 'get' }).then((res) => resolve(res))
               } catch (err) {
                 resolve({ data: { code: -1, msg: err, success: false } })
-                console.log(mock)
               }
             })
+        },
+        saveAxiosData(data){
+            this.apiList = data
         }
     }
 })

@@ -4,7 +4,7 @@
         <h1>Ajax Demo</h1>
     </div>
     <div class="container">
-        <div  v-for="item in axiosDataList" :key="item" class="itemList" @click="OpenModal(item.prodId)">
+        <div  v-for="item in axiosDataList" :key="item" class="itemList">
             <div style="width:30%;height:auto;">
                 <img :src="item.prodImg" alt="" style="width:100%;height:100%;">
             </div>
@@ -15,84 +15,58 @@
     </div>
     <div id="modal" v-show="isOpen">
         <Popup>
-            <template #image >
-                <div class="mb-2 flex space-x-2">
-                    <img :src="AxiosDetail.prodImg" style="width:100px;" alt="picture upload preview">
-                </div>
-            </template>
-            <template #name>
-                Name: {{ AxiosDetail.prodName }}
-            </template>
-            <template #amount>
-                Amount: {{ AxiosDetail.amount }}
-            </template>
-            <template #width>
-                Width: {{ AxiosDetail.width }}
-            </template>
-            <template #weight>
-                Weight: {{ AxiosDetail.weight }}
-            </template>
-            <template #height>
-                Height: {{ AxiosDetail.height }}
-            </template>
-            <template #button>
-                {{ btnText }}
-            </template>
         </Popup>
     </div>
     <div class="background-black" v-show="isOpen"></div>
 </div>
 </template>
 <script lang="ts">
+import {storeToRefs} from 'pinia';
+import { userStore } from '@/store/storeTim/timStore.ts';
+import { defineComponent, onMounted, ref, computed } from 'vue';
 import Popup from '@/components/branchTim/PopupModal.vue'
 import axios from 'axios'
-export default {
+export default defineComponent({
   name: 'ProjectThree',
   axios,
   components: {
     Popup
   },
   setup () {
-      btnText = 'Close Detail'
-    return {
-      btnText
-    }
-  },
-  computed: {
-    isOpen () {
-      return this.$store.state.ModalDemo.isOpen
-    },
-    axiosDataList () {
-      return this.$store.state.AxiosList.data
-    },
-    AxiosDetail () {
-      return this.$store.state.AxiosDetail
-    }
-  },
-  mounted () {
-    this.getAssetsList()
-  },
-  methods: {
-    OpenModal (id) {
-      this.getItemDetail(id)
-      this.$store.commit('changeOpen')
-    },
-    CloseModal () {
-      this.isOpen = false
-    },
-    async getAssetsList () {
-      const { data } = await axios.get('/product/list')
-      data.success && this.$store.commit('saveAxiosData', data)
-    },
+      const store = userStore()
+      const btnText = 'Close Detail'
 
-    async getItemDetail (id) {
-      console.log(id)
-      const { data } = await axios.get('/product/detail')
-      const dataDetail = data.data.filter(item => item.prodId === id)
-      data.success && this.$store.commit('getAxiosDataDetail', dataDetail[0])
+      const isOpen = computed(()=>{
+          return store.projectLight.lightBoxShowNine
+      })
+      const axiosDataList = computed(()=>{
+          return store.apiList
+      })
+
+      const getAssetsList = async function(){
+          const { data } = await axios.get('/product/list')
+            data.success && store.saveAxiosData(data)
+      }
+
+      onMounted(() => {
+          getAssetsList
+      })
+
+
+    return {
+      btnText,
+      isOpen,
+      onMounted,
+      axiosDataList
     }
-  }
-}
+  },
+//   computed: {
+//     AxiosDetail () {
+//       return this.$store.state.AxiosDetail
+//     }
+//   },
+
+})
 </script>
 
 <style scoped>
