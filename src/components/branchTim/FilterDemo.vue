@@ -14,7 +14,11 @@ export default defineComponent({
   setup() {
       const inputNumber = ref<number | string>('') 
     const filterNumber = computed(()=>{
-        return inputNumber.value === '' ? '' : inputNumber.value.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
+        return inputNumber.value === '' 
+        ? '' 
+        : inputNumber.value
+        .toString()
+        .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')
     })
 
     return {

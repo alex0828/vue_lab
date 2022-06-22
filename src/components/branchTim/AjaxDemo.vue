@@ -14,23 +14,25 @@
         </div>
     </div>
     <div id="modal" v-show="isOpen">
-        <Popup>
-        </Popup>
+        <PopupModal>
+            <p>Woohoo,you're reading this text in a modal!</p>
+            <button class="button">Close PopupModal</button>
+        </PopupModal>
     </div>
     <div class="background-black" v-show="isOpen"></div>
 </div>
 </template>
 <script lang="ts">
 import {storeToRefs} from 'pinia';
+import PopupModal from "@/components/branchTim/PopupModal.vue";
 import { userStore } from '@/store/storeTim/timStore.ts';
 import { defineComponent, onMounted, ref, computed } from 'vue';
-import Popup from '@/components/branchTim/PopupModal.vue'
 import axios from 'axios'
 export default defineComponent({
   name: 'ProjectThree',
   axios,
   components: {
-    Popup
+    PopupModal
   },
   setup () {
       const store = userStore()
