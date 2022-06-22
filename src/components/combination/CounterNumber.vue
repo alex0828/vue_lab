@@ -10,19 +10,20 @@
 </template>
 
 <script lang="ts" setup>
-import {reactive, ref } from 'vue';
-import { sumValue } from '@/utils/utilsCombine/Counter.ts'
-    const count = reactive({
-        count: 0 as number 
-    })
-    /**
+import { reactive } from 'vue'
+import { sumValue } from '@/utils/utilsCombine/Counter'
+const count = reactive({
+  count: 0 as number
+})
+
+/**
      * @description 計算動態數字的加減法
-     * @param {number} 帶入的參數決定加一或減一  
+     * @param {number} 帶入的參數決定加一或減一
      * @return {number} 加減後的數字結果
      */
-    const editValue = function(num : number){
-        count.count = sumValue(count.count, num)
-    }
+const editValue = function (num : number) {
+  count.count = sumValue(count.count, num)
+}
 </script>
 
 <style scoped>

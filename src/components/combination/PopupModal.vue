@@ -8,7 +8,7 @@
           <hr />
           <!-- 父層級傳入 slot -->
           <div class="inner">
-            <slot />
+            <slot></slot>
           </div>
         </div>
       </div>
@@ -18,9 +18,9 @@
 
 <script lang="ts" setup>
 const props = defineProps({
-  lightBoxShow:{
-    type:String,
-    default:true,
+  lightBoxShow: {
+    type: Boolean,
+    default: true
   }
 })
 </script>

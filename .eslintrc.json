@@ -5,8 +5,7 @@
     },
     "extends": [
         "plugin:vue/essential",
-        "standard",
-        "prettier"
+        "standard"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",

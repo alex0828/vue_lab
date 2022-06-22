@@ -10,20 +10,20 @@
 </template>
 
 <script lang="ts" setup>
-import { projectFirestore } from "@/utils/firebase/config";
-import { nextTick, onMounted, ref } from "vue";
-import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-const carousel = ref<object[]>([]);
+import { projectFirestore } from '@/utils/firebase/config'
+import { onMounted, ref } from 'vue'
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide } from 'vue3-carousel'
+const carousel = ref<object[]>([])
 const getList = async function () {
   try {
-    const res = await projectFirestore.collection("list").get();
+    const res = await projectFirestore.collection('list').get()
     if (res.size === 0) {
-      throw new Error("資料為空");
+      throw new Error('資料為空')
     }
     carousel.value = res.docs.map((doc) => {
-      return { ...doc.data() };
-    });
+      return { ...doc.data() }
+    })
     // nextTick(() => {
     //   $(".owl-carousel").owlCarousel({
     //     items: 3,
@@ -35,12 +35,12 @@ const getList = async function () {
     //   });
     // });
   } catch (error) {
-    carousel.value = { message: error };
+    carousel.value = { message: error }
   }
-};
+}
 onMounted(() => {
-  getList();
-});
+  getList()
+})
 </script>
 
 <style lang="scss" scoped>

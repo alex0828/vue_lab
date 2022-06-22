@@ -6,7 +6,7 @@
         <button @click="lightBoxChange">Open PopupModal</button>
       </li>
     </ul>
-    <PopupModal :lightBoxShow="sevenBoxShow">
+    <PopupModal :lightBoxShow="true">
       <!-- 主要內容區塊注入 -->
       <p>Woohoo,you're reading this text in a modal!</p>
       <button class="button" @click="lightBoxChange">Close PopupModal</button>
@@ -15,13 +15,13 @@
 </template>
 
 <script lang="ts" setup>
-import PopupModal from "@/components/branchJf/PopupModal.vue";
-import { ref } from "vue";
-const sevenBoxShow = ref<boolean>(false)
+import PopupModal from '@/components/branchJf/PopupModal.vue'
+import { ref } from 'vue'
+const sevenBoxShow = ref<boolean>()
 const lightBoxChange = function () {
   sevenBoxShow.value = !sevenBoxShow.value
-  console.log('yes')
-};
+//   console.log('yes')
+}
 </script>
 <style lang="scss" scoped>
 h1 {
