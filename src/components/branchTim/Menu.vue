@@ -21,3 +21,24 @@ export default defineComponent({
   setup() {},
 });
 </script>
+<style lang="scss" scoped>
+h4 {
+  display: flex;
+  justify-content: center;
+}
+.list {
+  display: grid;
+  width: 60%;
+  margin: 20px auto;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  a {
+    padding: 15px;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #ccc;
+    &:hover {
+      color: aquamarine;
+    }
+  }
+}
+</style>
